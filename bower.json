@@ -1,0 +1,28 @@
+{
+  "name": "begard-tinymce",
+  "version": "0.0.1",
+  "authors": [
+    "mohsen shafiei <mohsen.jch@gmail.com>"
+  ],
+  "description": "Begard extension for TinyMCE",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "begard",
+    "tinymce",
+    "filemanager"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "tinymce": "~4.2.4",
+    "begard": "~0.2.0"
+  }
+}
