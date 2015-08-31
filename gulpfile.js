@@ -7,20 +7,26 @@ var gulp         = require('gulp')
 gulp.task('default', ['generate']);
 
 gulp.task('watch', function() {
-    var watcher = gulp.watch(['main.js'], ['generate']);
+    var watcher = gulp.watch(['plugin.js'], ['generate']);
     watcher.on('change', function(event) {
         console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
     });
 });
 
 gulp.task('generate', function() {
-    gulp.src('main.js')
+    gulp.src('plugin.js')
         .pipe(plumber())
         .pipe(uglify())
         .pipe(rename('plugin.min.js'))
         .pipe(gulp.dest('bower_components/tinymce/plugins/begard'));
 
-    gulp.src('main.js')
+    gulp.src('plugin.js')
+        .pipe(plumber())
+        .pipe(uglify())
+        .pipe(rename('plugin.min.js'))
+        .pipe(gulp.dest('./'));
+
+    gulp.src('plugin.js')
         .pipe(plumber())
         .pipe(rename('plugin.js'))
         .pipe(gulp.dest('bower_components/tinymce/plugins/begard'));
